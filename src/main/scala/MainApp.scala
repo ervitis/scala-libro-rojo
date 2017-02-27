@@ -1,9 +1,10 @@
 import chapter1.Exercise1
 import skel.Skel
+import chapter2.{Exercise1 => Exercise11}
 
 object MainApp {
   def getExercises: List[Skel] = {
-    val exercises = List(new Exercise1())
+    val exercises = List(new Exercise1(), new Exercise11())
 
     exercises
   }
