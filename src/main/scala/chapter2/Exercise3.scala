@@ -8,6 +8,6 @@ class Exercise3 extends Skel {
   }
 
   override def execute() = {
-
+    println(partial1(4, (a: Int, b: Int) => a + b)(2))
   }
 }
