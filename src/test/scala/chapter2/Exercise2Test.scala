@@ -14,4 +14,16 @@ class Exercise2Test extends FunSpec with Matchers {
       assert(ex.isSorted(Array('b', 'z', 'a'), (a: Char, b: Char) => (a > b)) === false)
     }
   }
+
+  describe("Use the recursive function") {
+    val ex = new Exercise2()
+
+    it("sorted") {
+      assert(ex.isSortedRecursive(Array(1, 2, 3, 4), (a: Int, b: Int) => (a > b)) === true)
+    }
+
+    it("not sorted") {
+      assert(ex.isSortedRecursive(Array(1, 5, 2, 3), (a: Int, b: Int) => (a > b)) === false)
+    }
+  }
 }
