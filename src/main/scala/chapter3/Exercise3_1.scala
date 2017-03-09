@@ -19,6 +19,38 @@ object Lista {
     case Cons(x, xs) => x * product(xs)
   }
 
+  def tail[A](xs: List[A]): A = xs match {
+    case Nil => throw new Exception("List null")
+    case Cons(x, _) => x
+  }
+
+  def drop[A](xs: List[A], n: Int): List[A] = {
+    if (n <= 0) xs
+    else xs match {
+      case Nil => Nil
+      case Cons(_, l) => drop(l, n-1)
+    }
+  }
+
+  def dropWhile[A](xs: List[A], f: A => Boolean): List[A] = xs match {
+    case Cons(h, l) if f(h) => dropWhile(l, f)
+    case _ => xs
+  }
+
+  def append[A](xs1: List[A], xs2: List[A]): List[A] = {
+    xs1 match {
+      case Nil => xs2
+      case Cons(n, l) => Cons(n, append(l, xs2))
+    }
+  }
+
+  def setHead[A](xs: List[A], n: A): List[A] = {
+    xs match {
+      case Cons(h, l) => Cons(n, l)
+      case Nil => Cons(n, Nil)
+    }
+  }
+
   def apply[A](as: A*): List[A] =
     if (as.isEmpty) Nil
     else Cons(as.head, apply(as.tail: _*))
@@ -31,5 +63,6 @@ class Exercise3_1 extends Skel {
 
     println(Lista.sum(l))
     println(Lista.product(m))
+    println(Lista.drop(m, 2))
   }
 }
