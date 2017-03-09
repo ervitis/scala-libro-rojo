@@ -7,7 +7,7 @@ sealed trait List[+A]
 case object Nil extends List[Nothing]
 case class Cons[+A](head: A, tail: List[A]) extends List[A]
 
-object List {
+object Lista {
   def sum(ints: List[Int]): Int = ints match {
     case Nil => 0
     case Cons(x, xs) => x + sum(xs)
@@ -27,9 +27,9 @@ object List {
 class Exercise3_1 extends Skel {
   override def execute() = {
     val l = Cons(1, Cons(2, Cons(3, Nil)))
-    val m = List(1.0, 2.0, 3.0)
+    val m = Lista(1.0, 2.0, 3.0)
 
-    println(List.sum(l))
-    println(List.product(m))
+    println(Lista.sum(l))
+    println(Lista.product(m))
   }
 }

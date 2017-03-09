@@ -7,7 +7,7 @@ class Exercise3_1Test extends ScalaTestingBase {
     it("should create a Nil object, so it will be an empty list") {
       val myNil = Nil
 
-      assert(myNil === List())
+      assert(myNil === Lista())
     }
 
     it("should create a constant value using Nil") {
@@ -20,13 +20,13 @@ class Exercise3_1Test extends ScalaTestingBase {
     it("I can do the sum from the elements of the list") {
       val l = Cons(4, Cons(2, Nil))
 
-      assert(List.sum(l) === 6)
+      assert(Lista.sum(l) === 6)
     }
 
     it("I can do the product from the elements of the list") {
       val l = Cons(2.0, Cons(8.0, Nil))
 
-      assert(List.product(l) === 16)
+      assert(Lista.product(l) === 16)
     }
 
   }
