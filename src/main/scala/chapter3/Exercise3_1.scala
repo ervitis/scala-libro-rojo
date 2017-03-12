@@ -51,6 +51,22 @@ object Lista {
     }
   }
 
+  def foldRight[A, B](l: List[A], z: B)(f: (A, B) => B): B = l match {
+    case Nil => z
+    case Cons(x, xs) => f(x, foldRight(xs, z)(f))
+  }
+
+  def sum2(l: List[Int]) = foldRight(l, 0)(_ + _)
+
+  def product2(l: List[Double]) = foldRight(l, 1.0)(_ * _)
+
+  def product3(l: List[Double]) = l match {
+    case Cons(0.0, _) => Cons(0.0, l)
+    case _ => foldRight(l, 1.0)(_ * _)
+  }
+
+  def length[A](l: List[A]): Int = foldRight(l, 0)((_, i) => i + 1)
+
   def apply[A](as: A*): List[A] =
     if (as.isEmpty) Nil
     else Cons(as.head, apply(as.tail: _*))

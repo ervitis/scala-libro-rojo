@@ -4,6 +4,8 @@ import interfaces.ScalaTestingBase
 
 class Exercise3_1Test extends ScalaTestingBase {
   describe("using our data structure of a list") {
+    val listData = Lista(4, 5, 3, 2, 8)
+
     it("should create a Nil object, so it will be an empty list") {
       val myNil = Nil
 
@@ -53,6 +55,10 @@ class Exercise3_1Test extends ScalaTestingBase {
 
       assert(Lista.setHead(l, 4) === Lista(4, 2, 3, 4))
       assert(Lista.setHead(Nil, 3) === Lista(3))
+    }
+
+    it("calculates the length of a list") {
+      assert(Lista.length(listData) === 5)
     }
 
   }
