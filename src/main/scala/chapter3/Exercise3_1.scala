@@ -81,6 +81,8 @@ object Lista {
 
   def ::[A](xs1: List[A], xs2: List[A]): List[A] = append(xs1, xs2)
 
+  def add1(xs: List[Int]): List[Int] = foldRight(xs, Nil: List[Int])((h, t) => Cons(h+1, t))
+
   def apply[A](as: A*): List[A] =
     if (as.isEmpty) Nil
     else Cons(as.head, apply(as.tail: _*))

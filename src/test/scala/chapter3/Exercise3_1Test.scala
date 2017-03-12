@@ -82,5 +82,9 @@ class Exercise3_1Test extends ScalaTestingBase {
       assert(Lista.::(Lista(1, 2), Lista(2, 3)) === Lista(1, 2, 2, 3))
     }
 
+    it("adds 1 to each element in a list") {
+      assert(Lista.add1(Lista(1, 2, 3, 4)) === Lista(2, 3, 4, 5))
+    }
+
   }
 }
