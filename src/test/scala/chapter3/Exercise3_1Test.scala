@@ -73,5 +73,10 @@ class Exercise3_1Test extends ScalaTestingBase {
       assert(Lista.appendFoldRight(Lista(1, 2), Lista(3, 4)) === Lista(1, 2, 3, 4))
     }
 
+    it("concats a list of lists into a single list") {
+      val l = Lista.concat(Lista(Lista(4, 3, 3, 2, 1)))
+      assert(l === Lista(4, 3, 3, 2, 1))
+    }
+
   }
 }
