@@ -86,5 +86,9 @@ class Exercise3_1Test extends ScalaTestingBase {
       assert(Lista.add1(Lista(1, 2, 3, 4)) === Lista(2, 3, 4, 5))
     }
 
+    it("converts list of double to string") {
+      assert(Lista.convertToString(Lista(1.0, 2.0)) === Lista("1.0", "2.0"))
+    }
+
   }
 }

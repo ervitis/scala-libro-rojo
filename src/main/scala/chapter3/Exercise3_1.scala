@@ -83,6 +83,8 @@ object Lista {
 
   def add1(xs: List[Int]): List[Int] = foldRight(xs, Nil: List[Int])((h, t) => Cons(h+1, t))
 
+  def convertToString(xs: List[Double]): List[String] = foldRight(xs, Nil: List[String])((h, t) => Cons(h.toString, t))
+
   def apply[A](as: A*): List[A] =
     if (as.isEmpty) Nil
     else Cons(as.head, apply(as.tail: _*))
