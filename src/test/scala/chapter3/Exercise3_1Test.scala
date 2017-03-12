@@ -78,5 +78,9 @@ class Exercise3_1Test extends ScalaTestingBase {
       assert(l === Lista(4, 3, 3, 2, 1))
     }
 
+    it("appends two lists using :: operator") {
+      assert(Lista.::(Lista(1, 2), Lista(2, 3)) === Lista(1, 2, 2, 3))
+    }
+
   }
 }

@@ -79,6 +79,8 @@ object Lista {
 
   def concat[A](xs: List[List[A]]): List[A] = foldRight(xs, Nil: List[A])(append)
 
+  def ::[A](xs1: List[A], xs2: List[A]): List[A] = append(xs1, xs2)
+
   def apply[A](as: A*): List[A] =
     if (as.isEmpty) Nil
     else Cons(as.head, apply(as.tail: _*))
