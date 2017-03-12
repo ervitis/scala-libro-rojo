@@ -61,5 +61,9 @@ class Exercise3_1Test extends ScalaTestingBase {
       assert(Lista.length(listData) === 5)
     }
 
+    it("calculates foldleft") {
+      assert(Lista.foldLeft(listData, 0)(_ + _) === 22)
+    }
+
   }
 }
