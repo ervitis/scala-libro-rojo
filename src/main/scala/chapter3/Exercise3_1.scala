@@ -75,6 +75,8 @@ object Lista {
 
   def reverse[A](l: List[A]): List[A] = foldLeft(l, Lista[A]())((acc, h) => Cons(h, acc))
 
+  def appendFoldRight[A](l: List[A], x: List[A]): List[A] = foldRight(l, x)(Cons(_, _))
+
   def apply[A](as: A*): List[A] =
     if (as.isEmpty) Nil
     else Cons(as.head, apply(as.tail: _*))

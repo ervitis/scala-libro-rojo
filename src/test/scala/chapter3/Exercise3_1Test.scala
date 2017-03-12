@@ -69,5 +69,9 @@ class Exercise3_1Test extends ScalaTestingBase {
       assert(Lista.reverse(listData) === Lista(8, 2, 3, 5, 4))
     }
 
+    it("append two lists") {
+      assert(Lista.appendFoldRight(Lista(1, 2), Lista(3, 4)) === Lista(1, 2, 3, 4))
+    }
+
   }
 }
