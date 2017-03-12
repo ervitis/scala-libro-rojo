@@ -73,6 +73,8 @@ object Lista {
     case Cons(x, xs) => foldLeft(xs, f(z, x))(f)
   }
 
+  def reverse[A](l: List[A]): List[A] = foldLeft(l, Lista[A]())((acc, h) => Cons(h, acc))
+
   def apply[A](as: A*): List[A] =
     if (as.isEmpty) Nil
     else Cons(as.head, apply(as.tail: _*))

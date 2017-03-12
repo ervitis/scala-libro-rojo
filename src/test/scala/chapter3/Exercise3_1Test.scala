@@ -65,5 +65,9 @@ class Exercise3_1Test extends ScalaTestingBase {
       assert(Lista.foldLeft(listData, 0)(_ + _) === 22)
     }
 
+    it("reverses a list") {
+      assert(Lista.reverse(listData) === Lista(8, 2, 3, 5, 4))
+    }
+
   }
 }
