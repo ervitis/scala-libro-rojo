@@ -45,6 +45,9 @@ trait Stream[+A] {
       if (f(h)) cons(h, t)
       else t
     )
+
+  def append[B >: A](s: => Stream[B]): Stream[B] =
+    foldRight(s)((h, t) => cons(h, t))
 }
 
 case object Empty extends Stream[Nothing]

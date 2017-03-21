@@ -5,6 +5,7 @@ import interfaces.ScalaTestingBase
 class Exercise5_2Test extends ScalaTestingBase {
   describe("streams") {
     val s = Stream(2, 3, 4, 5, 6, 1, 2, 3)
+    val l = s.toList
 
     it("returns a list") {
       assert(s.toList === List(2, 3, 4, 5, 6, 1, 2, 3))
@@ -35,6 +36,11 @@ class Exercise5_2Test extends ScalaTestingBase {
 
     it("filter") {
       assert(s.filter(_ % 2 === 0).toList === List(2, 4, 6, 2))
+    }
+
+    it("append") {
+      assert(s.append(Stream(9, 9)).toList === l ++ List(9, 9))
+      assert(s.append(Stream()).toList === l)
     }
   }
 }
