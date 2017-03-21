@@ -42,5 +42,9 @@ class Exercise5_2Test extends ScalaTestingBase {
       assert(s.append(Stream(9, 9)).toList === l ++ List(9, 9))
       assert(s.append(Stream()).toList === l)
     }
+
+    it("flatMap") {
+      assert(s.flatMap(x => Stream(x * 2)).toList === l.map(_ * 2))
+    }
   }
 }
