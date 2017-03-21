@@ -32,5 +32,9 @@ class Exercise5_2Test extends ScalaTestingBase {
     it("map") {
       assert(s.map(_ + 2).toList === List(4, 5, 6, 7, 8, 3, 4, 5))
     }
+
+    it("filter") {
+      assert(s.filter(_ % 2 === 0).toList === List(2, 4, 6, 2))
+    }
   }
 }
