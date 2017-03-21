@@ -23,5 +23,10 @@ class Exercise5_2Test extends ScalaTestingBase {
     it("takewhile") {
       assert(s.takeWhile(_ < 4).toList === List(2, 3))
     }
+
+    it("forAll") {
+      assert(s.forAll(_ % 7 != 0))  // it doesn't have any element multiple of 7
+      assert(Stream(2, 4, 6).forAll(_ % 2 === 0))
+    }
   }
 }
