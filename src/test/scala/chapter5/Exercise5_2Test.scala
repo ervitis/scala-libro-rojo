@@ -19,5 +19,9 @@ class Exercise5_2Test extends ScalaTestingBase {
 
       assert(ns === List(2, 3, 4))
     }
+
+    it("takewhile") {
+      assert(s.takeWhile(_ < 4).toList === List(2, 3))
+    }
   }
 }
