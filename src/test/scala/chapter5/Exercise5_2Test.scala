@@ -52,5 +52,9 @@ class Exercise5_2Test extends ScalaTestingBase {
     it("constant") {
       assert(Stream.constant(1.0).take(2).toList === List(1.0, 1.0))
     }
+
+    it("make a serie of numbers") {
+      assert(Stream.from(3).take(5).toList === List(3, 4, 5, 6, 7))
+    }
   }
 }

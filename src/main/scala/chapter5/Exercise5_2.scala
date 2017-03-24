@@ -75,6 +75,10 @@ object Stream {
     lazy val v: Stream[A] = cons(a, v)
     v
   }
+
+  def from(n: Int): Stream[Int] = {
+    cons(n, from(n + 1))
+  }
 }
 
 class Exercise5_2 extends Skel {
