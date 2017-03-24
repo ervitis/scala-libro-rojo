@@ -47,4 +47,10 @@ class Exercise5_2Test extends ScalaTestingBase {
       assert(s.flatMap(x => Stream(x * 2)).toList === l.map(_ * 2))
     }
   }
+
+  describe("stream object") {
+    it("constant") {
+      assert(Stream.constant(1.0).take(2).toList === List(1.0, 1.0))
+    }
+  }
 }
