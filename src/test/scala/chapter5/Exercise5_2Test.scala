@@ -56,5 +56,9 @@ class Exercise5_2Test extends ScalaTestingBase {
     it("make a serie of numbers") {
       assert(Stream.from(3).take(5).toList === List(3, 4, 5, 6, 7))
     }
+
+    it("fibonacci series") {
+      assert(Stream.fibs.take(5).toList === List(0, 1, 1, 2, 3))
+    }
   }
 }
