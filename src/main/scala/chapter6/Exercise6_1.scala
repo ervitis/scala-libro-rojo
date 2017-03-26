@@ -31,6 +31,11 @@ object RNG {
     val (d, r) = double(rng)
     ((v, d), r)
   }
+
+  def doubleInt(rng: RNG): ((Double, Int), RNG) = {
+    val v = intDouble(rng)
+    ((v._1._2, v._1._1), v._2)
+  }
 }
 
 class Exercise6_1 extends Skel {
