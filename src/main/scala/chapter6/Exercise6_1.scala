@@ -18,6 +18,13 @@ object RNG {
     val (v, r) = rng.nextInt
     (v.abs, r)
   }
+
+  def double(rng: RNG): (Double, RNG) = {
+    val (v, r) = rng.nextInt
+    var d: Double = v.toDouble
+    if (v.abs >= 1) d = d / Int.MaxValue
+    (d, r)
+  }
 }
 
 class Exercise6_1 extends Skel {
