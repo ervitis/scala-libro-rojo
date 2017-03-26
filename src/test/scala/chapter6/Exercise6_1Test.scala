@@ -46,5 +46,14 @@ class Exercise6_1Test extends ScalaTestingBase {
         assert(r._1 >= 0 && r._1 < 1)
       }
     }
+
+    it("returns a tuple of 3 doubles") {
+      for(i <- 1 to 1000) {
+        val rng = RNG.simple(i)
+        val r = RNG.double3(rng)._1
+        assert(r._1 >= 0 && r._1 < 1)
+        assert(r._1 === r._2 && r._1 === r._3)
+      }
+    }
   }
 }

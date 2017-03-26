@@ -36,6 +36,9 @@ object RNG {
     val v = intDouble(rng)
     ((v._1._2, v._1._1), v._2)
   }
+
+  def double3(rng: RNG): ((Double, Double, Double), RNG) =
+    ((double(rng)._1, double(rng)._1, double(rng)._1), double(rng)._2)
 }
 
 class Exercise6_1 extends Skel {
