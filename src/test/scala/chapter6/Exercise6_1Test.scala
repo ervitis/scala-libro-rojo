@@ -55,5 +55,11 @@ class Exercise6_1Test extends ScalaTestingBase {
         assert(r._1 === r._2 && r._1 === r._3)
       }
     }
+
+    it("returns a list of ints") {
+      val l = RNG.ints(4)(RNG.simple(1L))
+      assert(l._1.length === 4)
+      l._1.foreach(v => assert(v >= 0))
+    }
   }
 }

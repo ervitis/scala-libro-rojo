@@ -39,6 +39,15 @@ object RNG {
 
   def double3(rng: RNG): ((Double, Double, Double), RNG) =
     ((double(rng)._1, double(rng)._1, double(rng)._1), double(rng)._2)
+
+  def ints(count: Int)(rng: RNG): (List[Int], RNG) = {
+    if (count <= 0) (List(), rng)
+    else {
+      val (x, r1) = positiveInt(rng)
+      val (xs, r2) = ints(count - 1)(r1)
+      (x :: xs, r2)
+    }
+  }
 }
 
 class Exercise6_1 extends Skel {
