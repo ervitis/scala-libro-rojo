@@ -20,10 +20,16 @@ object RNG {
   }
 
   def double(rng: RNG): (Double, RNG) = {
-    val (v, r) = rng.nextInt
+    val (v, r) = positiveInt(rng)
     var d: Double = v.toDouble
-    if (v.abs >= 1) d = d / Int.MaxValue
+    if (v >= 1) d /= Int.MaxValue
     (d, r)
+  }
+
+  def intDouble(rng: RNG): ((Int, Double), RNG) = {
+    val (v, _) = positiveInt(rng)
+    val (d, r) = double(rng)
+    ((v, d), r)
   }
 }
 

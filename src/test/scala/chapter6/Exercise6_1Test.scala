@@ -28,5 +28,14 @@ class Exercise6_1Test extends ScalaTestingBase {
       }
       println()
     }
+
+    it("returns a tuple of int and double") {
+      for(i <- 1 to 1000) {
+        val rng = RNG.simple(i)
+        val r = RNG.intDouble(rng)._1
+        assert(r._1 >= 0)
+        assert(r._2 >= 0 && r._2 < 1)
+      }
+    }
   }
 }
