@@ -4,6 +4,7 @@ import chapter2.{Exercise2, Exercise3, Exercise4, Exercise5, Exercise6, Exercise
 import chapter3.Exercise3_1
 import chapter4.Exercise4_1
 import chapter5.Exercise5_2
+import chapter6.Exercise6_1
 
 object MainApp {
   def getExercises: List[Skel] = {
@@ -12,8 +13,9 @@ object MainApp {
     val chapter3 = List(new Exercise3_1())
     val chapter4 = List(new Exercise4_1())
     val chapter5 = List(new Exercise5_2())
+    val chapter6 = List(new Exercise6_1())
 
-    chapter1 ++ chapter2 ++ chapter3 ++ chapter4 ++ chapter5
+    chapter1 ++ chapter2 ++ chapter3 ++ chapter4 ++ chapter5 ++ chapter6
   }
 
   def main(args: Array[String]): Unit = {
